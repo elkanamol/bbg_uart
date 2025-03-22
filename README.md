@@ -9,12 +9,13 @@ This project demonstrates how to:
 - Send data through a UART port
 - Receive data from a UART port
 - Create a loopback test using physical pins
+- Handle errors gracefully in serial communication
 
 The code provides a practical example of serial communication fundamentals that are essential for embedded systems development.
 
 ## Components
 
-- **uart.h/uart.c**: Core UART initialization and configuration functions
+- **uart.h/uart.c**: Core UART initialization and configuration functions with configurable baudrate
 - **send.c**: Application that sends "Hello world" messages over UART
 - **receive.c**: Application that receives and displays messages from UART
 - **makefile**: Build script to compile the applications
@@ -68,10 +69,19 @@ The termios.h library is used to control asynchronous communications ports in Un
 5. Handle flow control settings
 6. Set read timeouts with VMIN and VTIME parameters
 
+## Error Handling
+
+The code demonstrates proper error handling for UART operations:
+- Checking for NULL parameters
+- Handling file open failures
+- Managing termios configuration errors
+- Returning specific error codes for different failure scenarios
+- Proper resource cleanup on error
+
 ## Notes
 
 - The code uses "/dev/ttyS1" as the default serial port. You may need to adjust this based on your system configuration.
-- The UART is configured for 115200 baud, 8 data bits, no parity, and 1 stop bit (8N1).
+- The UART is configured for 115200 baud by default, but the code supports configurable baudrates.
 - Both applications run in an infinite loop. Use Ctrl+C to terminate them.
 
 ## License
