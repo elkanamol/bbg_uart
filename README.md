@@ -28,7 +28,7 @@ To test the UART communication without additional hardware, you can create a loo
 2. Connect these pins using a jumper wire to create a loopback circuit
 3. This will route any transmitted data back to the receiver
 
-![BeagleBone Green Pinout](https://files.seeedstudio.com/wiki/BeagleBone_Green/images/PINMAP_TIMER.png))
+![BeagleBone Green Pinout](https://files.seeedstudio.com/wiki/BeagleBone_Green/images/PINMAP_UART.png)
 
 ### Detailed Pin Information:
 - Pin #24: UART1_TXD (Transmit Data)
